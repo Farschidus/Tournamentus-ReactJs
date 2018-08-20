@@ -8,15 +8,16 @@ import Timezone from '../Modal/Timezone';
 import SelectItemFromModal from '../Modal/SelectItemFromModal';
 import ChartConfig from '../Data/ChartConfig.json';
 import Timezones from '../Data/Timezones.json';
+import { connect } from 'react-redux';
+import { updateName, setTimezone } from '../Actions/userActions';
 
+@connect((store) => ({ user: store.user }))
 class Profile extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             memberPic: 'clientFiles/profilePics/farschidus.jpg',
-            name: 'Farshid A. Ghavanini',
-            timezone: 'Set Your Timezone',
             points: {
                 perfect: 10,
                 goalDiff: 7,
@@ -30,11 +31,11 @@ class Profile extends React.Component {
     }
 
     setTimezone(timezone) {
-        this.setState({ timezone: timezone.name });
+        this.props.dispatch(setTimezone(timezone.name));
     }
 
     updateName(newName) {
-        this.setState({ name: newName });
+        this.props.dispatch(updateName(newName));
     }
 
     generateData() {
@@ -74,14 +75,14 @@ class Profile extends React.Component {
                 <header className="Profile-top">
                     <span className="Profile-photo" style={profilePhoto} />
                     <EditableLabel
-                        text={this.state.name}
+                        text={this.props.user.name}
                         onFocusOut={this.updateName}
                         labelClassName="Profile-name-label"
                         inputClassName="Profile-name-input"
                     />
                     <SelectItemFromModal
                         className="Profile-timezone"
-                        selectText={this.state.timezone}
+                        selectText={this.props.user.timezone}
                         onSelectItem={this.setTimezone}
                         modalItems={modalItems}
                     />
@@ -91,10 +92,10 @@ class Profile extends React.Component {
                         <AmCharts.React style={{ width: '100%', height: '100px' }} options={configWithData} />
                     </div>
                     <h1>{totalPoints} points</h1>
-                    <h3>Perfect <sub>(10pts)</sub>{this.state.points.perfect}</h3>
-                    <h3>GoalDiff <sub>(7pts)</sub>{this.state.points.goalDiff}x</h3>
-                    <h3>Correct <sub>(5pts)</sub>{this.state.points.correct}x</h3>
-                    <h3>Wrong <sub>(0pts)</sub>{this.state.points.wrong}x</h3>
+                    <h3>Perfect (10pts){this.state.points.perfect}</h3>
+                    <h3>GoalDiff (7pts){this.state.points.goalDiff}x</h3>
+                    <h3>Correct (5pts){this.state.points.correct}x</h3>
+                    <h3>Wrong (0pts){this.state.points.wrong}x</h3>
                 </div>
             </div>
         );

@@ -1,5 +1,6 @@
+const modalState = { isActive: false };
 
-export default function reducer(state = { isActive: false }, action) {
+export default function reducer(state = modalState, action) {
     switch (action.type) {
         case 'MODAL_CLOSED': {
             return { ...state, isActive: action.payload };
