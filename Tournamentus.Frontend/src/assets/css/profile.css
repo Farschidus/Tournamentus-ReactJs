@@ -1,0 +1,62 @@
+.Profile {
+    text-align: center;
+}
+
+.Profile-top {
+    padding: 10px 0;
+    margin: 0 20px;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+    background-color: #292b33;
+    height: 100%;
+    z-index: 10;
+    position: relative;
+}
+
+/* .Profile-bottom {
+    padding: 20px 0;
+    height: 100%;
+} */
+
+.Profile-bottom {
+    padding: 80px 0 20px;
+    margin: -60px 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+    background-color: #363a48;
+    height: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+.Profile-photo {
+    width: 120px;
+    height: 120px;
+    display: block;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    margin: 10px auto 20px;
+    box-shadow: 0 0 0 7px #f0f0f01c;
+}
+
+.Profile-name-label {
+    display: block;
+    padding-top: 9px;
+    margin: 5px auto 20px;
+    font-size: 20px;
+}
+
+.Profile-name-input  {
+    margin-bottom: 10px;
+    font-size: 20px;
+    background-color: #292b33;
+    border: 1px solid #363a48;
+    color: #fff;
+    padding: 6px 10px;
+    text-align: center;
+}
+
+.Profile-timezone {
+    display: block;
+}

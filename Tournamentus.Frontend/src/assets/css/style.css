@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import "addNewGroup.css";
+@import "addNewTeam.css";
+@import "body.css";
+@import "button.css";
+@import "card.css";
+@import "divider.css";
+@import "flag.css";
+@import "imageSlider.css";
+@import "link.css";
+@import "linkButton.css";
+@import "login.css";
+@import "modal.css";
+@import "menu.css";
+@import "modalPopup.css";
+@import "profile.css";
+@import "utils.css";
+@import "textbox.css";
+
+.Bgs {
+    color: #1e1e24;
+    color: #292b33;
+    color: #363a48;
+    color: #3f424e; /* for Menu items*/
+    color: #54565b; /* for deviders*/
+}
+.texts {
+    color: #ffffff;
+    color: #e1e1e1;
+    color: #bfbfc2;
+    color: #4b4b4f;
+}
+.elements {
+    color: #f7be32;
+    color: #05b9ff;
+    color: #e94635;
+    color: #6632f7;
+    color: #f73286;
+}
+
+:focus {
+    outline-color: transparent;
+    outline-style: none;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-family: '-apple-system','HelveticaNeue', 'Raleway', sans-serif;
+    background-color: #1e1e24;
+}
+
+@media(min-width: 1000px) {
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-repeat: no-repeat;
+        color: #FFF;
+        font-family: 'Raleway', sans-serif;
+        background: #004065;
+    }
+}

@@ -1,0 +1,6 @@
+[
+    { "name": "Sweden", "isoCode": "se" },
+    { "name": "Norway", "isoCode": "no" },
+    { "name": "Denmark", "isoCode": "dk" },
+    { "name": "Finland", "isoCode": "fi" }
+]
