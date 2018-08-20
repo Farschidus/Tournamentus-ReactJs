@@ -1,12 +1,8 @@
 import React from 'react';
-import 'amcharts3';
-import 'amcharts3/amcharts/serial';
-import 'amcharts3/amcharts/themes/dark';
-import AmCharts from '@amcharts/amcharts3-react';
 import EditableLabel from 'react-inline-editing';
+import Chart from '../Chart';
 import Timezone from '../Modal/Timezone';
 import SelectItemFromModal from '../Modal/SelectItemFromModal';
-import ChartConfig from '../Data/ChartConfig.json';
 import Timezones from '../Data/Timezones.json';
 import { connect } from 'react-redux';
 import { updateName, setTimezone } from '../Actions/userActions';
@@ -15,16 +11,6 @@ import { updateName, setTimezone } from '../Actions/userActions';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            memberPic: 'clientFiles/profilePics/farschidus.jpg',
-            points: {
-                perfect: 10,
-                goalDiff: 7,
-                correct: 5,
-                wrong: 0,
-            },
-        };
 
         this.setTimezone = this.setTimezone.bind(this);
         this.updateName = this.updateName.bind(this);
@@ -38,29 +24,11 @@ class Profile extends React.Component {
         this.props.dispatch(updateName(newName));
     }
 
-    generateData() {
-        const firstDate = new Date();
-        const dataProvider = [];
-
-        for (let i = 0; i < 32; ++i) {
-            const date = new Date(firstDate.getTime());
-
-            date.setDate(i);
-
-            dataProvider.push({
-                date,
-                value: i * 10,
-            });
-        }
-        return dataProvider;
-    }
-
     render() {
         const profilePhoto = {
-            backgroundImage: `url(${this.state.memberPic})`,
+            backgroundImage: `url(${this.props.user.picture})`,
         };
-        const totalPoints = (this.state.points.perfect * 10) + (this.state.points.goalDiff * 7) + (this.state.points.correct * 5);
-        const configWithData = { ...ChartConfig, dataProvider: this.generateData() };
+        const totalPoints = (this.props.user.points.perfect * 10) + (this.props.user.points.goalDiff * 7) + (this.props.user.points.correct * 5);
 
         const modalItems = Timezones.map((zone, i) => (
             <Timezone
@@ -89,13 +57,13 @@ class Profile extends React.Component {
                 </header>
                 <div className="Profile-bottom">
                     <div className="chart" style={{ marginTop: '-25px' }}>
-                        <AmCharts.React style={{ width: '100%', height: '100px' }} options={configWithData} />
+                        <Chart />
                     </div>
                     <h1>{totalPoints} points</h1>
-                    <h3>Perfect (10pts){this.state.points.perfect}</h3>
-                    <h3>GoalDiff (7pts){this.state.points.goalDiff}x</h3>
-                    <h3>Correct (5pts){this.state.points.correct}x</h3>
-                    <h3>Wrong (0pts){this.state.points.wrong}x</h3>
+                    <h3>Perfect (10pts){this.props.user.points.perfect}</h3>
+                    <h3>GoalDiff (7pts){this.props.user.points.goalDiff}x</h3>
+                    <h3>Correct (5pts){this.props.user.points.correct}x</h3>
+                    <h3>Wrong (0pts){this.props.user.points.wrong}x</h3>
                 </div>
             </div>
         );

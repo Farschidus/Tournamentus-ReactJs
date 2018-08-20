@@ -1,6 +1,13 @@
 const userState = {
     name: 'Farshid A. Ghavanini',
     timezone: 'Set Your Timezone',
+    picture: 'clientFiles/profilePics/farschidus.jpg',
+    points: {
+        perfect: 10,
+        goalDiff: 7,
+        correct: 5,
+        wrong: 0,
+    },
 };
 
 export default function reducer(state = userState, action) {
