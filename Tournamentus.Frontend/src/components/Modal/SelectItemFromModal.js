@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Modal from './../Modal';
@@ -17,14 +17,12 @@ class SelectItemFromModal extends React.Component {
     }
 
     render() {
-        let content;
-        if (this.props.modal.isActive) {
-            content = (<Modal items={this.props.modalItems} />);
-        } else {
-            content = (<div className={this.props.className} onClick={this.onOpenModal}>{this.props.selectText}</div>);
-        }
-
-        return content;
+        return (
+            <Fragment>
+                {this.props.modal.isActive && <Modal items={this.props.modalItems} />}
+                <div className={this.props.className} onClick={this.onOpenModal}>{this.props.selectText}</div>
+            </Fragment>
+        );
     }
 }
 

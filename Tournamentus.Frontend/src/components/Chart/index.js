@@ -17,7 +17,7 @@ class Chart extends React.Component {
 
             dataProvider.push({
                 date,
-                value: i * 10,
+                value: Math.floor(Math.random() * 10),
             });
         }
         return dataProvider;
