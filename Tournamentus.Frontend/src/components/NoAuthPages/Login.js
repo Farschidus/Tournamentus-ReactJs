@@ -32,7 +32,7 @@ class Login extends React.Component {
                         <span className="Divider">OR</span>
 
                         <div className="Login-formGroup">
-                            <Link className="Button Button--secondary" to="/register">Create Account</Link>
+                            <Link className="Button Button--secondary" to="/Registeration">Create Account</Link>
                         </div>
                     </div>
                 </section>

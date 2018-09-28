@@ -1,13 +1,15 @@
+import * as Actions from './../Consts/ActionTypes';
+
 export function openModal() {
     return {
-        type: 'MODAL_OPENED',
+        type: Actions.MODAL_OPENED,
         payload: true,
     };
 }
 
 export function closeModal() {
     return {
-        type: 'MODAL_CLOSED',
+        type: Actions.MODAL_CLOSED,
         payload: false,
     };
 }

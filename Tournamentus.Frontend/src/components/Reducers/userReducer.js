@@ -1,5 +1,8 @@
+import * as Actions from './../Consts/ActionTypes';
 const userState = {
-    name: 'Farshid A. Ghavanini',
+    id: 1,
+    firstName: 'Farshid',
+    lastName: 'A. Ghavanini',
     timezone: 'Set Your Timezone',
     picture: 'clientFiles/profilePics/farschidus.jpg',
     points: {
@@ -12,10 +15,10 @@ const userState = {
 
 export default function reducer(state = userState, action) {
     switch (action.type) {
-        case 'USER_UPDATE_NAME': {
+        case Actions.SET_USER_FULLNAME: {
             return { ...state, name: action.payload };
         }
-        case 'USER_SET_TIMEZONE': {
+        case Actions.USER_SET_TIMEZONE: {
             return { ...state, timezone: action.payload };
         }
         default: {

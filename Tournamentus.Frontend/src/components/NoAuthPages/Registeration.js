@@ -2,7 +2,7 @@ import React from 'react';
 import LoginLogo from '../../assets/images/LoginLogo.png';
 import { Link } from 'react-router-dom';
 
-class Register extends React.Component {
+class Registeration extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -40,4 +40,4 @@ class Register extends React.Component {
     }
 }
 
-export default Register;
+export default Registeration;

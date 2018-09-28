@@ -28,7 +28,9 @@ class Profile extends React.Component {
         const profilePhoto = {
             backgroundImage: `url(${this.props.user.picture})`,
         };
-        const totalPoints = (this.props.user.points.perfect * 10) + (this.props.user.points.goalDiff * 7) + (this.props.user.points.correct * 5);
+        const totalPoints = (this.props.user.points.perfect * 10)
+            + (this.props.user.points.goalDiff * 7)
+            + (this.props.user.points.correct * 5);
 
         const modalItems = Timezones.map((zone, i) => (
             <Timezone

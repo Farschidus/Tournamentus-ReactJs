@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as modalActions from '../Actions/modalActions';
+import { closeModal } from '../Actions/modalActions';
 
 @connect((store) => ({ modal: store.modal }))
 class Modal extends React.Component {
@@ -12,7 +12,7 @@ class Modal extends React.Component {
     }
 
     closeModal() {
-        this.props.dispatch(modalActions.closeModal());
+        this.props.dispatch(closeModal());
     }
 
     render() {
