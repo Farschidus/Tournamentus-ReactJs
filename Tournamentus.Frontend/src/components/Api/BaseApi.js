@@ -5,7 +5,7 @@ export default class BaseApi {
     baseUrl;
 
     constructor() {
-        this.baseUrl = 'http://localhost:58751/api/';
+        this.baseUrl = 'https://localhost:3001/api/';
     }
 
     async _get(endpoint, params = {}) {
@@ -67,6 +67,9 @@ export default class BaseApi {
         };
 
         headers.append('Authorization', `Bearer ${token}`);
+
+        headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+        headers.append('Access-Control-Allow-Credentials', 'true');
 
         if (method === 'POST') {
             options.body = body;

@@ -8,8 +8,8 @@ import Home from '../Home/CurrentGame';
 const Body = () => (
     <main className="Body">
         <Switch>
-            <PrivateRoute exact path="/" component={Home} />
-            <PrivateRoute path="/Profile" component={Profile} />
+            <Route exact path="/" component={Home} />
+            <Route path="/Profile" component={Profile} />
             <Route path="/login" component={Login} />
             <Route path="/Registeration" component={Registeration} />
             <Route path="/ForgottenPassword" component={ForgottenPassword} />

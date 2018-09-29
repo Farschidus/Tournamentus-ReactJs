@@ -1,7 +1,11 @@
 import BaseApi from './BaseApi';
 
 class TeamApi extends BaseApi {
-    apiBase = 'team';
+    apiBase = 'teams';
+
+    get() {
+        return this._get(`${this.apiBase}`);
+    }
 
     getTeam(teamId) {
         return this._get(`${this.apiBase}/getTeam/${teamId}`);

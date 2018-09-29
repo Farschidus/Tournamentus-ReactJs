@@ -1,7 +1,7 @@
 import * as Actions from './../Consts/ActionTypes';
 
 export const setUserFullName = (payload) => ({
-    type: Actions.SET_USER_FULLNAME,
+    type: Actions.USER_SET_FULLNAME,
     payload,
 });
 

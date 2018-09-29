@@ -3,6 +3,7 @@ const userState = {
     id: 1,
     firstName: 'Farshid',
     lastName: 'A. Ghavanini',
+    fullName: 'Farshid A. Ghavanini',
     timezone: 'Set Your Timezone',
     picture: 'clientFiles/profilePics/farschidus.jpg',
     points: {

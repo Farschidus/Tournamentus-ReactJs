@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Countries from '../Data/Countries.json';
 import Team from './../Modal/Team';
 import GroupCardItem from './GroupCardItem';
 import SelectItemFromModal from '../Modal/SelectItemFromModal';
+import { connect } from 'react-redux';
+import { fetchAllTeams } from '../Actions/teamActions';
 
+@connect((store) => ({ team: store.team }))
 class Card extends React.Component {
     constructor(props) {
         super(props);
@@ -21,6 +23,10 @@ class Card extends React.Component {
 
         this.removeTeam = this.removeTeam.bind(this);
         this.addNewTeam = this.addNewTeam.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.dispatch(fetchAllTeams());
     }
 
     removeTeam(countryName) {
@@ -49,11 +55,11 @@ class Card extends React.Component {
             />));
 
         // Replace with API
-        const modalItems = Countries.map((country, i) => (
+        const modalItems = this.props.team.teams.map((team, i) => (
             <Team
                 key={i}
-                name={country.name}
-                isoCode={country.isoCode}
+                name={team.name}
+                isoCode={team.isoCode}
                 onSelect={this.addNewTeam}
             />));
 
