@@ -1,0 +1,8 @@
+﻿CREATE TABLE dbo.Groups(
+	GroupName nvarchar(16) NOT NULL
+)
+GO
+
+ALTER TABLE dbo.Groups
+	ADD CONSTRAINT PK_Groups PRIMARY KEY CLUSTERED (GroupName ASC)
+GO

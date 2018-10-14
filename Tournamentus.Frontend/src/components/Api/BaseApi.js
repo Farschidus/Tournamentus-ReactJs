@@ -5,7 +5,7 @@ export default class BaseApi {
     baseUrl;
 
     constructor() {
-        this.baseUrl = 'https://localhost:3001/api/';
+        this.baseUrl = 'http://localhost/Tournamentus.Api/api/';
     }
 
     async _get(endpoint, params = {}) {
