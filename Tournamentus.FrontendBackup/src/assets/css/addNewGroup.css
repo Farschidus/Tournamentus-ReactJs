@@ -1,0 +1,16 @@
+.AddNewGroup {
+    display: block;
+    float: left;
+    background-color: transparent;
+    width: 90vw;
+    height: 300px;
+    border-radius: 5px;
+    margin: 0 5vw;
+    border: dashed 2px #3f424e;
+    box-shadow: 0px 0 15px 0px #000 inset;
+}
+
+.AddNewGroup-content {
+    color: #3f424e;
+    font-weight: bold;
+}

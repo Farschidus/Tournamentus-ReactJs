@@ -1,11 +1,11 @@
-﻿using Tournamentus.Api.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Tournamentus.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using Tournamentus.Api.Security;
+using Tournamentus.Core.Api;
 using System;
+using System.Text;
 
 namespace Tournamentus.Api.Extensions
 {
@@ -24,8 +24,8 @@ namespace Tournamentus.Api.Extensions
         public static IServiceCollection AddSecurity(this IServiceCollection services, AppSettings appSettings)
         {
             // configure jwt authentication
-            var key = Encoding.ASCII.GetBytes(appSettings.WhoKnows);
-            //
+            var key = Encoding.ASCII.GetBytes("7NKMdsVeRrZS1Dp!h0xa1uBwt47QoWUjXWk3pyqx|");
+
             services.AddScoped<CustomJwtBearerEvents>()
             .AddAuthentication(x =>
             {
@@ -34,14 +34,20 @@ namespace Tournamentus.Api.Extensions
             })
             .AddJwtBearer(options =>
             {
+                options.Events = services.BuildServiceProvider().GetService<CustomJwtBearerEvents>();
                 options.RequireHttpsMetadata = false;
                 options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = false,
-                    ValidateAudience = false
+                    //ValidIssuer = appSettings.Security.Issuer,
+                    ValidateAudience = false,
+                    //ValidAudience = appSettings.Security.Audience,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                    //RequireExpirationTime = false,
+                    //ValidateLifetime = true,
+                    //ClockSkew = TimeSpan.MaxValue
                 };
             });
 

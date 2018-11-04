@@ -1,0 +1,75 @@
+.Card {
+    background-color: #292b33;
+    width: 90vw;
+    border-radius: 5px;
+    margin: 0 5vw;
+    box-shadow: 0px 7px 20px 0px #000;
+}
+
+.Card-header {
+    border-bottom: solid 1px #54565b;
+    padding: 5vw;
+}
+
+.Card-content {
+    overflow-y: hidden;
+    padding: 5vw 0;
+}
+
+.GroupCardItem {
+    position: relative;
+    padding: 5px 5vw;
+    background-color: #292b33;
+    z-index: 100;
+    animation: all 0.7s ease-in;
+}
+
+.GroupCardItem-background {
+    background-color: #e94635;
+    z-index: 1;
+}
+
+.GroupCardItem-removeButton {
+    position: absolute;
+    margin-top: 14px;
+    left: 76vw;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.GroupCardItem-removeButton-icon {
+    margin-right: 5px;
+}
+
+.GroupCardItem--swipeLeft {
+    animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.GroupCardItem--swipeRight {
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.GroupCardItem--fade {
+    opacity: 0;
+}
+
+/* -----* w: http://animista.net * ----- */
+@keyframes slide-left {
+    0% {
+            transform: translateX(0);
+    }
+    100% {
+            transform: translateX(-80px);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+            transform: translateX(-80px);
+    }
+    100% {
+            transform: translateX(0);
+    }
+}
+  
+  

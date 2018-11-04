@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using Tournamentus.Core.Authentication;
+using Microsoft.AspNetCore.Http;
 
 namespace Tournamentus.Api.Security
 {
@@ -24,7 +21,7 @@ namespace Tournamentus.Api.Security
                 var defaultPrincipal = _httpContextAccessor.HttpContext.User;
                 if (defaultPrincipal != null)
                 {
-                    var principal = MapToEasyCubePrincipal(defaultPrincipal);
+                    var principal = MapToTournamentusPrincipal(defaultPrincipal);
                     return principal;
                 }
                 else
@@ -38,7 +35,7 @@ namespace Tournamentus.Api.Security
             }
         }
 
-        private TournamentusPrincipal MapToEasyCubePrincipal(ClaimsPrincipal defaultPrincipal)
+        private TournamentusPrincipal MapToTournamentusPrincipal(ClaimsPrincipal defaultPrincipal)
         {
             var principal = new TournamentusPrincipal(defaultPrincipal)
             {

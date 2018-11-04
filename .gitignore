@@ -68,9 +68,6 @@ build/Release
 node_modules/
 jspm_packages/
 
-# VS Code
-.vscode
-
 # Typescript v1 declaration files
 typings/
 
@@ -407,6 +404,7 @@ build/**
 # check in shared environment profiles
 !template.publish.xml
 !build.publish.xml
+!loadtest.publish.xml
 !production.publish.xml
 !build.pubxml
 !uat.pubxml
@@ -414,6 +412,7 @@ build/**
 !integration.pubxml
 !iotintegration.pubxml
 !production.pubxml
+!loadtest.pubxml
 
 # ignore app settings
 appsettings.azurelocal.json

@@ -1,0 +1,4 @@
+# Tournamentus
+
+Football betting application
+

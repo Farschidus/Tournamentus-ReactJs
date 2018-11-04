@@ -1,4 +1,4 @@
-﻿using Tournamentus.Api.Contracts;
+using Tournamentus.Api.Contracts;
 using FluentValidation.Results;
 
 namespace Tournamentus.Api.Extensions

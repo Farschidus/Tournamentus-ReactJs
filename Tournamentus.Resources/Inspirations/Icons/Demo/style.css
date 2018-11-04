@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Tournamentus';
+  src:  url('fonts/Tournamentus.eot?a437hx');
+  src:  url('fonts/Tournamentus.eot?a437hx#iefix') format('embedded-opentype'),
+    url('fonts/Tournamentus.ttf?a437hx') format('truetype'),
+    url('fonts/Tournamentus.woff?a437hx') format('woff'),
+    url('fonts/Tournamentus.svg?a437hx#Tournamentus') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Tournamentus' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-stats:before {
+  content: "\e900";
+}
+.icon-result .path1:before {
+  content: "\e901";
+  color: rgb(229, 229, 229);
+}
+.icon-result .path2:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-result .path3:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(69, 75, 84);
+}
+.icon-result .path4:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: none;
+}
+.icon-result .path5:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: none;
+}
+.icon-result .path6:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: none;
+}
+.icon-result .path7:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: none;
+}
+.icon-result .path8:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: none;
+}
+.icon-user:before {
+  content: "\e909";
+}
+.icon-credits:before {
+  content: "\e90a";
+}
+.icon-ball:before {
+  content: "\e90b";
+}
+.icon-rules:before {
+  content: "\e90c";
+}
+.icon-trophy .path1:before {
+  content: "\e90d";
+  color: rgb(181, 126, 2);
+}
+.icon-trophy .path2:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(94, 192, 143);
+}
+.icon-trophy .path3:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(221, 159, 5);
+}
+.icon-trophy .path4:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(221, 159, 5);
+}
+.icon-trophy .path5:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(57, 142, 95);
+}
+.icon-trophy .path6:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(255, 193, 7);
+}
+.icon-trophy .path7:before {
+  content: "\e913";
+  margin-left: -1em;
+  color: rgb(255, 193, 7);
+}
+.icon-trophy .path8:before {
+  content: "\e914";
+  margin-left: -1em;
+  color: rgb(181, 126, 2);
+}
+.icon-trophy .path9:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(181, 126, 2);
+}
+.icon-trophy .path10:before {
+  content: "\e916";
+  margin-left: -1em;
+  color: rgb(181, 126, 2);
+}
+.icon-trophy .path11:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(255, 224, 130);
+}
+.icon-trophy .path12:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(255, 224, 130);
+}
+.icon-chart:before {
+  content: "\1f323";
+}

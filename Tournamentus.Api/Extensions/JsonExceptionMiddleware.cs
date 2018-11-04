@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
@@ -13,7 +13,7 @@ namespace Tournamentus.Api.Extensions
         public string Message { get; set; }
         public string Detail { get; set; }
     }
-    
+
     public class JsonExceptionMiddleware
     {
         IHostingEnvironment _env;

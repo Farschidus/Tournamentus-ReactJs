@@ -1,19 +1,23 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using StructureMap;
-using System;
+using Microsoft.Extensions.Logging;
 using Tournamentus.Api.Extensions;
 using Tournamentus.Api.Infrastructure;
-using Tournamentus.Core;
+using Tournamentus.Api.Security;
+using Tournamentus.Core.Api;
+using StructureMap;
+using System;
 
 namespace Tournamentus.Api
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; set; }
+        public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration)
         {
@@ -29,14 +33,13 @@ namespace Tournamentus.Api
             services.AddMvc(options =>
             {
                 // Add authorize filter to authorize users who have access to application
-                // options.Filters.Add(new AuthorizeFilter(new AuthorizationPolicies().IsParticipant()));
+                options.Filters.Add(new AuthorizeFilter(new AuthorizationPolicies().IsAuthenticated()));
                 options.Filters.Add(new ProducesAttribute("application/json"));
             })
-            .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
             .AddControllersAsServices();
 
             services.AddSecurity(settings);
-
+            
             return ConfigureIoC(services, settings);
         }
 
@@ -50,36 +53,40 @@ namespace Tournamentus.Api
                 config.Populate(services);
             });
 
-            // container.AssertConfigurationIsValid();
+            container.AssertConfigurationIsValid();
 
             return container.GetInstance<IServiceProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseHsts();
+                app.UseExceptionHandler();
             }
 
-            app.UseCors(builder => builder
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+            app.UseAuthentication();
 
-            // Usfeful for future error handeling
-            app.UseExceptionHandler(new ExceptionHandlerOptions
-            {
-                ExceptionHandler = new JsonExceptionMiddleware(env).Invoke
+            app.UseCors(builder => { builder
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
             });
 
-            app.UseAuthentication();
-            app.UseHttpsRedirection();
+            // Usfeful for future error handeling
+            //app.UseExceptionHandler(new ExceptionHandlerOptions
+            //{
+            //    ExceptionHandler = new JsonExceptionMiddleware(env).Invoke
+            //});
+
             app.UseMvc();
         }
     }

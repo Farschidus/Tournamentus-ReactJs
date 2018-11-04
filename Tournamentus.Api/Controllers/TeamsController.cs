@@ -1,16 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 using Tournamentus.Api.Extensions;
-using Tournamentus.Core.Tournamentus.Api;
+using Tournamentus.Core.Api.Teams;
 
 namespace Tournamentus.Api.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
-    [ApiController]
     public class TeamsController : Controller
     {
         private readonly IMediator _mediator;

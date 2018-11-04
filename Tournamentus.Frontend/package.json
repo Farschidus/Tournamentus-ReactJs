@@ -1,90 +1,32 @@
 {
-  "name": "tournamentus.frontend",
-  "version": "1.0.0",
-  "description": "Tournamentus SPA Frontend",
-  "license": "MIT",
-  "engines": {
-    "npm": ">=3",
-    "node": ">=5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Farschidus/Tournamentus.git"
-  },
-  "author": "Farschidus",
-  "scripts": {
-    "start": "babel-node tools/devServer.js --watch",
-    "build": "babel-node tools/buildServer.js",
-    "lint": "esw webpack.dev.js src --color",
-    "lint:watch": "npm run lint -w"
-  },
-  "keywords": [
-    "tournamentus"
-  ],
+  "name": "Tournamentus.frontend",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@amcharts/amcharts3-react": "^3.0.0",
-    "amcharts3": "^3.21.13",
-    "flag-icon-css": "^3.0.0",
-    "mobx": "^4.1.1",
-    "mobx-persist": "^0.4.1",
-    "mobx-react": "^5.0.0",
-    "react": "^16.3.1",
-    "react-calendar": "^2.14.0",
-    "react-dom": "^16.3.1",
-    "react-inline-editing": "^1.0.10",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "query-string": "^6.2.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-sortable-hoc": "^0.8.3",
-    "react-swipe-events": "^1.0.3",
-    "react-timeago": "^4.1.9",
-    "react-transition-group": "^2.2.1",
-    "redux": "^4.0.0",
-    "redux-promise-middleware": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.5",
+    "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-react-svg": "^2.1.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-react-constant-elements": "^6.23.0",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "browser-sync": "^2.23.6",
-    "chalk": "^2.3.2",
-    "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.5.1",
-    "css-loader": "^0.28.11",
-    "eslint": "^4.19.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-watch": "^3.1.3",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.0.7",
-    "oidc-client": "^1.4.1",
-    "react-svg-loader": "^2.1.0",
-    "style-loader": "^0.20.3",
-    "uglifyjs-webpack-plugin": "^1.2.4",
-    "webpack": "^4.8.1",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-middleware": "^3.0.1",
-    "webpack-hot-middleware": "^2.21.2",
-    "webpack-md5-hash": "0.0.6",
-    "webpack-merge": "^4.1.2",
-    "webpack-pwa-manifest": "^3.6.2",
-    "whatwg-fetch": "^2.0.3",
-    "workbox-webpack-plugin": "^3.0.1"
-  }
+  "scripts": {
+    "start": "set PORT=7777 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

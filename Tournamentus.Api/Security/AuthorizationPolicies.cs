@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Tournamentus.Api.Security
 {
     public class AuthorizationPolicies
     {
-        public AuthorizationPolicy IsParticipant()
+        public AuthorizationPolicy IsAuthenticated()
         {
-            return NewPolicyBuilder()
+            return new AuthorizationPolicyBuilder()
                 .RequireAuthenticatedUser()
-                .RequireRole("Participant")
                 .Build();
         }
 

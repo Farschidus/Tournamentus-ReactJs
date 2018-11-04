@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Tournamentus.Api
@@ -7,11 +7,12 @@ namespace Tournamentus.Api
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            BuildWebHost(args).Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                .Build();
     }
 }

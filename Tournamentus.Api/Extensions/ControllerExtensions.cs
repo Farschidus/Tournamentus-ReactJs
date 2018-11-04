@@ -1,4 +1,4 @@
-﻿using Tournamentus.Api.Contracts;
+using Tournamentus.Api.Contracts;
 using Tournamentus.Core;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;

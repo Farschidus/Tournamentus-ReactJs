@@ -1,5 +1,3 @@
-﻿using Tournamentus.Core.Model;
-using FluentValidation;
 using FluentValidation.Results;
 using FluentValidation.Validators;
 using System.Collections.Generic;
