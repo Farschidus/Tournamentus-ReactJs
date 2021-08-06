@@ -1,2 +1,2 @@
-# Tournamentus
+# Tournamentus-ReactJs
 Football betting application
