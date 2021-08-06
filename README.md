@@ -1,2 +1,2 @@
 # Tournamentus-ReactJs
-Football betting application
+Football betting application with .Net Core and ReactJs
